@@ -1,0 +1,543 @@
+@charset "UTF-8";
+
+.main {
+	background-color: #00a0e9;
+	width: 100%
+}
+
+.main2 {
+	background-color: #0095f9;
+	margin-top: 0px;
+}
+
+.main3 {
+	background-color: #008bff;
+}
+
+.parent {
+	/*親要素*/
+	position: relative;
+}
+
+.parent p {
+	position: absolute;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+}
+
+.center {
+	vertical-align: middle;
+}
+
+
+.buttons_item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ddl{
+	width: 250px;
+	margin-top:5px;
+}
+
+.bg-gray{
+	backgroung-color:#e9ecef;
+}
+
+/***********   DataViewTable Height  *************/
+.wrapper {
+	height: 200px;
+	overflow: scroll;
+	overflow-x: hidden;
+	/* margin:0px 0px 0px 0px; */
+}
+
+/***********   DataViewTable Columns  *************/
+.ColAcquired {
+	width: 20%;
+}
+
+.ColFileName {
+	width: 20%;
+}
+
+.ColCompanyName {
+	width: 30%;
+}
+
+.ColRemarks {
+	width: 30%;
+}
+
+.ColDate {
+	width: 120px;
+}
+/***********   font effect  *************/
+
+.font-bold {
+	font-weight: bold;
+}
+
+.font-size-9{
+	font-size:9pt;
+}
+
+.font-size-10{
+	font-size:10pt;
+}
+
+.font-size-11{
+	font-size:11pt;
+}
+
+.font-size-12{
+	font-size:12pt;
+}
+
+.font-white {
+	color: #ffffff;
+}
+
+.font-red{
+	color:#ff0000;
+}
+
+
+/***********   size  *************/
+
+.width100 {
+	width: 100px;
+}
+
+.width150 {
+	width: 150px;
+}
+
+.width200 {
+	width: 200px;
+}
+
+.width250 {
+	width: 250px;
+}
+
+.width300 {
+	width: 300px;
+}
+
+.width350 {
+	width: 350px;
+}
+
+.widt400 {
+	width: 400px;
+}
+
+.widt450 {
+	width: 450px;
+}
+
+.width_10{
+	width:250px;
+}
+
+.width-50{
+	width:50px;
+}
+
+.height15{
+	height:10px;
+}
+
+
+/********************  Padding  ********************/
+
+.pad-0{
+	padding:0px;
+}
+
+.pad-2{
+	padding:2px;
+}
+
+.pad-bottom-5 {
+	padding-bottom: 5px;
+}
+
+.pad-top-5 {
+	padding-top: 5px;
+}
+
+
+.pad-left-5{
+	padding-left:5px;
+}
+
+.pad-right-5{
+	padding-right:5px;
+}
+
+.pad-5 {
+	padding: 5px;
+}
+
+.pad-10 {
+	padding: 10px;
+}
+
+.pad-top-10{
+	padding-top:10px;
+}
+
+.pad-left-10{
+	padding-left:10px;
+}
+
+.pad-right-10{
+	padding-right:10px;
+}
+
+.pad-bottom-10 {
+	padding-bottom: 10px;
+}
+
+.pad-20 {
+	padding: 20px;
+}
+
+.pad-top-20{
+	padding-top:20px;
+}
+
+.pad-left-20{
+	padding-left:20px;
+}
+
+.pad-right-20{
+	padding-right:20px;
+}
+
+.pad-bottom-20 {
+	padding-bottom: 20px;
+}
+
+.pad-right-100{
+	padding-right:100px;
+}
+
+/********************  Margin  ********************/
+
+.margin-top-50 {
+	margin-top: 50px;
+}
+
+
+.margin-0{
+	margin:0px;
+}
+
+.margin-bottom-5 {
+	margin-bottom: 5px;
+}
+
+.margin-top-5 {
+	margin-top: 5px;
+}
+
+.margin-left-5{
+	margin-left:5px;
+}
+
+.margin-right-5{
+	margin-right:5px;
+}
+
+.margin-5 {
+	margin: 5px;
+}
+
+.margin-top-7{
+	margin-top:7px;
+}
+
+.margin-right-7{
+	margin-right:7px;
+}
+
+.margin10{
+	margin:10px;	
+}
+
+.margin-top-10{
+	margin-top:10px;
+}
+
+.margin-left-10{
+	margin-left:10px;
+}
+
+.margin-right-10{
+	margin-right:10px;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px;
+}
+
+.margin-20{
+	margin:20px;	
+}
+
+.margin-top-20{
+	margin-top:20px;
+}
+
+.margin-left-20{
+	margin-left:20px;
+}
+
+.margin-right-20{
+	margin-right:20px;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+.margin-top-30{
+	margin-top:30px;
+}
+
+.margin-bottom-30{
+	margin-bottom:30;
+}
+
+.margin-left-50{
+	margin-left:50px;
+}
+
+.margin-right-50{
+	margin-right:50px;
+}
+
+.margin-left-100{
+	margin-left:100px;
+}
+
+.margin-right-100{
+	margin-right:90px;
+}
+
+.margin-backBtn{
+	margin:20px 0px 30px 50px;
+}
+
+.margin-helf{
+
+	margin-left:50%;
+}
+
+/***********  padding  *************/
+
+.pad-top-bottom5 {
+	padding: 5px 0px;
+}
+
+.pad-left-30 {
+	padding-left: 30px;
+}
+ 
+ .pad-bottom-30 {
+	padding-bottom: 30px;
+}
+
+/***********  button  *************/
+
+.btn2{
+  border:  color:#cfcfcf;
+  border-radius: 5px;
+  background-color:#e9e9e9;
+  /* padding: 2px */;
+
+  text-align: center;
+  color: #333333;
+  height:22px;
+  width:90px;
+  line-height: 1;
+  text-decoration: none;
+}
+.alter-btn{
+  border:  color:#a3d1ff;
+  border-radius: 5px;
+  background-color: #93c9ff;
+  /* padding: 2px */;
+
+  text-align: center;
+  color: #333333;
+  height:22px;
+  width:90px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.alter-btn2{
+  border:  color:#a3d1ff;
+  border-radius: 5px;
+  background-color: #93c9ff;
+  /* padding: 2px */;
+  text-align: center;
+  color: #333333;
+  height:27px;
+  width:150px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.delete-btn{
+  border:  color:#ff9393;
+  border-radius: 5px;
+  background-color:#ff9393;
+  /* padding: 2px */;
+  text-align: center;
+  color: #333333;
+  height:22px;
+  width:90px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.delete-btn2{
+  border:  color:#ff9393;
+  border-radius: 5px;
+  background-color:#ff9393;
+  /* padding: 2px */;
+  text-align: center;
+  color: #333333;
+  height:27px;
+  width:150px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.register-btn{
+  border:  color:#7fffbf;
+  border-radius: 5px;
+  background-color:#93ff93;
+  /* padding: 2px */;
+
+  text-align: center;
+  color: #333333;
+  height:27px;
+  width:150px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+
+/* .test{
+	color:#ffffff;
+	background-color:#707070;
+} */
+
+/***********  float  *************/
+
+.float-head-left{
+	float:left;
+	position : relative ;
+	top:22%;
+	left:15px;
+}
+
+.float-head-right{
+	float:top;
+	position : relative ;
+	top:2px;
+	right:5px;
+}
+
+
+.float-head-button{
+	float:top;
+	position : relative ;
+	top:2px;
+	right:0%;
+	clear:left;
+/* 	left:50%; */
+}
+
+.float-none{
+	float:none;
+}
+
+.nowrap{
+	    white-space: nowrap;
+}
+
+.inline{
+	display:inline-block
+}
+
+/********************  DropDownList  ********************/
+
+.cp2_ipselect {
+	overflow: hidden;
+	text-align: center;
+}
+.cp2_ipselect select {
+	width: 100%;
+	
+	cursor: pointer;
+	text-indent: 0.01px;
+
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.cp_ipselect2 select::-ms-expand {
+    display: none;
+}
+
+/*外枠の線デザイン */
+.cp2_ipselect.cp_sl03 {
+	position: relative;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	background: #e9ecef;
+}
+
+/*下三角形のデザインおよび位置 */
+
+.cp2_ipselect.cp_sl03::before {
+	position: absolute;
+	top: 0.75em;
+	right: 0.75em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #aaaaaa;
+	pointer-events: none;
+}
+.cp2_ipselect.cp_sl03:after {
+	position: absolute;
+	top: 0;
+	right: 2.5em;
+	bottom: 0;
+	width: 1px;
+	content: '';
+	border-left: 1px solid #ced4;
+}
+
+/* 選択肢のデザイン */
+.cp2_ipselect.cp_sl03 select {
+	padding: 3px;;
+	color: #666666;
+}

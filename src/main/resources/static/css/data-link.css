@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+/* body{
+	font-family: serif;
+	font-size:15px;
+	background-color:ghostwhite;
+} */
+
+/******画面調整******/
+.StandardDivPadding {
+	padding: 0px 40px;
+}
+
+.InputPadding {
+	padding: 5px 5px 0px 25px;
+}
+
+
+.bot-pad-5{
+	padding-bottom:5px;
+}
+
+.top-pad-5 {
+	padding-top:5px;
+}
+
+.top-pad-5{
+	padding-top:5px;
+}
+
+.left-pad-5{
+	padding-left:5px;
+}
+
+.StandardTopMargin {
+	margin: 5px 0px 0px 0px;
+}
+
+
+/******パーツ毎の設定******/
+
+
+input[type=text] {
+	font-size: 13px;
+}
+
+input[type=file] {
+	font-size: 14px;
+}
+
+.DropDownList {
+	width: 200px;
+	font-size: 12px;
+}
+
+.LabelCheckBox {
+	padding: 0px 50px 0px 0px;
+}
+
+.ButtonMargin {
+	margin: 0px 0px 15px 0px;
+}
+
+.ButtonAdd {
+	padding: 2px 6px 2px 6px;
+	margin: 4px 0px 0px 0px
+}
+
+.ButtonSubmit {
+	padding: 2px 6px 2px 6px;
+	margin: 1px 1px 1px 1px;
+	font-size: 15 px;
+}
+
+.ButtonUploadSubmit {
+	margin: 0px 300px 0px 0px;
+}
+
+.menubar {
+	background-color: black;
+}
+
+.pageTitle {
+	color: white;
+	font-size: 22px;
+}
+/******1行で左右寄せ用 text-left,text-rightと併用で実現******/
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+/******タイトルロゴ******/
+.upload-logo {
+	
+	font-family: HG行書体;
+	background-color: royalblue;
+	color:white;
+	
+	margin:1px 0px 0px 0px;
+}
+
+.download-logo {
+	
+	font-family: HG行書体;
+	background-color: orangered;
+	color:white;
+}
+
+/******UploadInputテーブルのの定義******/
+.labelTd {
+	width: 70px;
+}
+
+.dropDownListTd {
+	width: 200px;
+}
+
+/******UploadInputテーブルのの定義******/
+
+
+
+/******DataViewテーブルのの定義******/
+.wrapper {
+	height: 343px;
+	overflow: scroll;
+	overflow-x: hidden;
+	margin:5px 0px 0px 0px;
+}
+
+.TableDataView {
+	width: 100%;
+	table-layout: fixed;
+	font-size: 14px;
+}
+
+.TableDataView th {
+	padding: 3px 0px;
+	/* background-color:palegreen; */
+}
+
+.TableDataView td{
+	padding:5px;
+}
+.TableDataView thead th {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+}
+
+.TableDataView tbody td {
+	position: sticky;
+	left: 0;
+}
+
+thead {
+	table-layout: fixed;
+}
+
+.TableDataView td {
+	max-width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/*列幅等*/
+.ColAcquired {
+	width: 50px;
+}
+
+.ColFileName {
+	width: 30%;
+}
+
+.ColCompanyName {
+	width: 20%;
+}
+
+.ColRemarks {
+	width: 20%;
+}
+
+.ColDate {
+	width: 120px;
+}
+
+
