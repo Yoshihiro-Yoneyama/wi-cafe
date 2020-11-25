@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MapController {
 	@RequestMapping("")
-	
 	public String mapDisp() {
 		return "homemap";
+	}
+	
+	@RequestMapping("leafmap")
+	public String leafmapDisp() {
+		return "leafmap";
 	}
 }

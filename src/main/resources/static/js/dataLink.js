@@ -1,34 +1,38 @@
-function initialize() {
-  if (GBrowserIsCompatible()) {
-    var map = new GMap2(document.getElementById("map_canvas"));
-    map.setCenter(new GLatLng(35.172999,136.897057), 12);
+function init() {
+  //地図表示(デフォルト設定)
 
-    var manager = new GMarkerManager(map);
+  //初期表示位置(現在位置の表示がほとんどになるため実際使うことはあまりない)
+  var mymap = L.map('mapid').setView([35.7102, 139.8132], 15);
+ 
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+ 　　　　maxZoom: 18,
+ 　　　　attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+ 　　}).addTo(mymap);
 
-    var markers1 = [
-      new GMarker(new GLatLng(35.176468,136.896866)),
-      new GMarker(new GLatLng(35.174153,136.8970979)),
-      new GMarker(new GLatLng(35.173234,136.89762)),
-      new GMarker(new GLatLng(35.173383,136.89987)),
-      new GMarker(new GLatLng(35.172986,136.899894)),
-      new GMarker(new GLatLng(35.172848,136.897845)),
-      new GMarker(new GLatLng(35.174106,136.896676)),
-      new GMarker(new GLatLng(35.175878,136.896483))
-    ];
+  var searchLayer = new L.LayerGroup();
+  mymap.addLayer(searchLayer);
 
-    var markers2 = [
-      new GMarker(new GLatLng(35.17613,136.89667)),
-      new GMarker(new GLatLng(35.174131,136.896885)),
-      new GMarker(new GLatLng(35.173034,136.897818)),
-      new GMarker(new GLatLng(35.173192,136.899881))
-    ];
+  var controlSearch = new L.Control.Search({
+ 　　　　position:'topright',
+ 　　　　layer: searchLayer,
+ 　　　　initial: false,
+ 　　　　zoom: 15,
+ 　　　　　marker: false
+ 　　});
+  mymap.addControl( controlSearch );
 
-    var marker3 = new GMarker(new GLatLng(35.172999,136.897057));
+  var data = [
+   {"loc":[35.7101, 139.8107], "title":"タイトル1", "description":"説明１"},
+   {"loc":[35.7121, 139.8207], "title":"タイトル2", "description":"説明２"},
+   {"loc":[35.7091, 139.8207], "title":"タイトル3", "description":"説明３"}
+ 　];
 
-    manager.addMarkers(markers1, 16);
-    manager.addMarkers(markers2, 14, 15);
-    manager.addMarker(marker3, 0, 13);
+  for(i in data) {
+   loc = data[i].loc,
+   marker = new L.Marker(new L.latLng(loc), {title: title} );
+   marker.bindPopup('title: '+ title );
+   searchLayer.addLayer(marker);
+ }
 
-    manager.refresh();
-  }
-}
+      }
+    
