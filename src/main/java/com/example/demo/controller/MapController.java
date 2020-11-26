@@ -20,4 +20,9 @@ public class MapController {
 	public String markerDisp() {
 		return "marker_colorTest";
 	}
+	
+	@RequestMapping("icon")
+	public String iconDisp() {
+		return "icon";
+	}
 }
