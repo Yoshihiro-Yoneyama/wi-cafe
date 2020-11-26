@@ -15,4 +15,9 @@ public class MapController {
 	public String leafmapDisp() {
 		return "leafmap";
 	}
+	
+	@RequestMapping("marker_colorTest")
+	public String markerDisp() {
+		return "marker_colorTest";
+	}
 }
