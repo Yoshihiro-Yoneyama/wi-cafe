@@ -4,9 +4,9 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-//テスト
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
 
@@ -15,27 +15,32 @@ import com.example.demo.repository.MapRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import antlr.collections.List;
-
 @Controller
 public class MapController {
 	
 	@Autowired
 	MapRepository repository;
 	
-	@ResponseBody
+	@Autowired
+	JdbcTemplate jdbctemplate;
+	
+	/*@ResponseBody*/
 	@RequestMapping("")
 	public String mapDisp() {
-		
-		List list = (List) repository.findAll();
-		
-		
-		
-		
-		
-		
 		return "homemap";
 	}
+		
+	/*User user = (User) jdbctemplate.queryForList("select latitude from map_marker");
+		
+		return getJson(user);
+    }*/
+    @ResponseBody
+    @RequestMapping("/marker_colorTest2_test")
+    public String jsontest(){
+        String script = "{'latitude':35.7101,'longitude':139.8067}";
+        return script;
+    }
+
 	
 	@RequestMapping("leafmap")
 	public String leafmapDisp() {
@@ -50,6 +55,11 @@ public class MapController {
 	@RequestMapping("icon")
 	public String iconDisp() {
 		return "icon";
+    }
+    
+    @RequestMapping("marker_colorTest2")
+	public String markerDisp2() {
+		return "marker_colorTest2";
 	}
 
 /*------共通------*/

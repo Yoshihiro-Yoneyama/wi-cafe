@@ -29,33 +29,29 @@
 </tr>
 </table>
     <script>
-      let xhr = new XMLHttpRequest();
-      xhr.open("GET","marker_colorTest",true);
-      xhr.onload=function(e){
-        if(xhr.readState === 4)
-          if(xhr.status === 200){
-            const user = JSON.parse(xhr.responseText);
-            
-          }
-      };
-    
-        // Mapの基本設定
+      // Mapの基本設定
+      alert(latitude.value);
         var map = L.map('mapid').setView([35.7102, 139.8132], 15);
-
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       		maxZoom: 18,
       		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
       	}).addTo(map);
 
-        // leaflet.sprite
-        L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
-        L.marker([35.7101,139.8067], {icon: L.spriteIcon()}).addTo(map); // default blue.
-        L.marker([35.7101,139.8087], {icon: L.spriteIcon('green')}).addTo(map);
-        L.marker([35.7101,139.8107], {icon: L.spriteIcon('orange')}).addTo(map);
-        L.marker([35.7101,139.8127], {icon: L.spriteIcon('yellow')}).addTo(map);
-        L.marker([35.7101,139.8147], {icon: L.spriteIcon('red')}).addTo(map);
-        L.marker([35.7101,139.8167], {icon: L.spriteIcon('purple')}).addTo(map);
-        L.marker([35.7101,139.8187], {icon: L.spriteIcon('violet')}).addTo(map);
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET","marker_colorTest2_test",true);
+      xhr.onload=function(e){
+        if(xhr.readState === 4)
+          if(xhr.status === 200){
+            const script = JSON.parse(xhr.responseText);
+            let latitude = script.latitude;
+            let longitude = script.longitude;
+            
+            alert(latitude.value);
+            // leaflet.sprite
+            L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
+            L.marker([latitude,longitude], {icon: L.spriteIcon()}).addTo(map); // default blue.
+          }
+      };
     </script>
   </body>
 </html>
