@@ -37,8 +37,8 @@ public class MapController {
     @ResponseBody
     @RequestMapping("/marker_colorTest2_test")
     public String jsontest(){
-        String script = "{'latitude':35.7101,'longitude':139.8067}";
-        return script;
+        String json = "{\"latitude\":35.7102,\"longitude\":139.8132}";
+        return json;
     }
 
 	
