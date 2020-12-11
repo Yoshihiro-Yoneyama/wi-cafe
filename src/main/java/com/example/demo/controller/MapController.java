@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -31,14 +33,29 @@ public class MapController {
 	}
 		
 	/*User user = (User) jdbctemplate.queryForList("select latitude from map_marker");
-		
 		return getJson(user);
     }*/
     @ResponseBody
     @RequestMapping("/marker_colorTest2_test")
     public String jsontest(){
-        String json = "{\"latitude\":35.7102,\"longitude\":139.8132}";
-        return json;
+        List<Map<String,Object>> location = jdbctemplate.queryForList("select * from map_marker");
+
+    	// Location location = new Location();
+    	
+    	// location.setLatitude(35.7102);
+    	// location.setLongitude(139.8132);
+//        String json = "{\"latitude\":35.7102,\"longitude\":139.8132}";
+    	//JSON変換用クラス
+    	ObjectMapper mapper = new ObjectMapper();
+    	
+    	try {
+    		String json = mapper.writeValueAsString(location); 
+    		return json;
+    	}catch (JsonProcessingException e) {
+			e.printStackTrace();
+			return null;
+		}
+        
     }
 
 	

@@ -25,6 +25,7 @@ L.spriteIcon = function(color) {
     iconAnchor: [12, 41],
     iconUrl: sources.blank,
     shadowUrl: L.Icon.Default.imagePath + "/marker-shadow.png"
+
   });
 };
 
