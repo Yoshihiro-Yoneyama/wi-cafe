@@ -22,7 +22,7 @@ L.spriteIcon = function(color) {
     className: "leaflet-sprite leaflet-sprite-" + color,
     iconSize: [24, 41],
     shadowsize: [41, 41],
-    iconAnchor: [0, 41],
+    iconAnchor: [13, 41],
     popupAnchor: [0, -35],                      // ポップアップの足位置とアンカーからの相対距離、±に注意
     iconUrl: sources.blank,
     shadowUrl: L.Icon.Default.imagePath + "/marker-shadow.png"

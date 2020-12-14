@@ -13,11 +13,9 @@
     <link rel="stylesheet" href="css/L.Control.MousePosition.css" />
     <script src="js/L.Control.MousePosition.js"></script>
 <!-- plugin -->
-
-
     <style type="text/css">
      <!--
-      #mapid { height: 400px; width: 600px}
+      #mapid { height: 500px; width: 80%;margin:0 0 0 auto;}
     -->
     </style>
   </head>
@@ -34,9 +32,10 @@
 </tr>
 </table>
     <script>
+    
       // Mapの基本設定
       /* 表示するマップの初期位置及び地図の倍率を設定 */
-        var map = L.map('mapid').setView([35.7102, 139.8132], 15);
+        var map = L.map('mapid').setView([34.7021594, 135.4956025], 15);
 
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       		maxZoom: 18,
@@ -82,8 +81,12 @@ L.control.mousePosition(options).addTo(map);
             /* 表示されるアイコンの設定 */
             L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
             L.marker([latitude, longitude], {icon: L.spriteIcon()}).addTo(map)
-            .bindPopup('<p>'+data[i].store_name+'</p><br/>'
-            +'<p>'+);
+            .bindPopup('<p>店名：'+data[i].store_name+'</p>'  //店名
+            +'<p>住所：<a href="https://www.google.co.jp/maps/search/'+data[i].address+'"target="_blank">'+data[i].address+'</a></p>'             //住所
+            +'<p>URL：<a href="'+data[i].store_url+'"target="_blank">'+data[i].store_url+'</a></p>'
+            +data[i].store_name+'で<a href="https://www.google.co.jp/maps/search/'+data[i].store_name+'"target="_blank">'+'Google Map'+'</a>検索</br>'
+            +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Googl'+'</a>検索')      //店舗HP
+            .openPopup();
             }
           }
         }
