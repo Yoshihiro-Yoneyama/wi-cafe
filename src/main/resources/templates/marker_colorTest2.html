@@ -12,8 +12,12 @@
     <!-- 緯度、経度表示 -->
     <link rel="stylesheet" href="css/L.Control.MousePosition.css" />
     <script src="js/L.Control.MousePosition.js"></script>
+    <!-- 検索窓 -->
+    <link rel="stylesheet" href="css/leaflet-search.css">
+    <script src="js/leaflet-search.js"></script>
 <!-- plugin -->
     <style type="text/css">
+    
      <!--
       #mapid { height: 500px; width: 80%;margin:0 0 0 auto;}
     -->
@@ -49,6 +53,22 @@ var options = {
 }
 L.control.mousePosition(options).addTo(map);
 
+/*-------------------- 検索窓の作成 --------------------*/
+//① 検索用のレイヤーを作成
+var searchLayer = new L.LayerGroup();
+map.addLayer(searchLayer);
+
+// ② 検索コンソール自体の設定
+var controlSearch = new L.Control.Search({
+　　　　position:'topright',
+　　　　layer: searchLayer,
+　　　　initial: false,
+　　　　zoom: 15,
+　　　　　marker: false
+　　});
+map.addControl( controlSearch );
+
+/*------------------- 非同期通信の設定 --------------------*/
       let xhr = new XMLHttpRequest();
       /* javaのコントローラーに非同期リクエスト送信 */
       xhr.open("GET","/marker_colorTest2_test",true);
@@ -78,25 +98,37 @@ L.control.mousePosition(options).addTo(map);
             /* alert(longitude); */
 
             // leaflet.sprite
-            /* 表示されるアイコンの設定 */
+/*-------------------- 表示されるアイコンの設定 --------------------*/
             L.Icon.Default.imagePath = 'https://unpkg.com/leaflet@1.3.1/dist/images/';
-            L.marker([latitude, longitude], {icon: L.spriteIcon()}).addTo(map)
-            .bindPopup('<p>店名：'+data[i].store_name+'</p>'  //店名
-            +'<p>住所：<a href="https://www.google.co.jp/maps/search/'+data[i].address+'"target="_blank">'+data[i].address+'</a></p>'             //住所
+            var marker = new L.marker([latitude, longitude], { title: data[i].store_name });
+            if (data[i].store_url == 'なし'){
+            marker.addTo(map)
+            .bindPopup('<p>店名：'+data[i].store_name+'</p>'  
+            +'<p>住所：<a href="https://www.google.co.jp/maps/search/'+data[i].address+'"target="_blank">'+data[i].address+'</a></p>'
+            +'<p>URL：なし</p>'
+            +data[i].store_name+'で<a href="https://www.google.co.jp/maps/search/'+data[i].store_name+'"target="_blank">'+'Google Map'+'</a>検索</br>'
+            +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Google'+'</a>検索');
+            }else{
+              
+            marker.addTo(map)
+            .bindPopup('<p>店名：'+data[i].store_name+'</p>'  
+            +'<p>住所：<a href="https://www.google.co.jp/maps/search/'+data[i].address+'"target="_blank">'+data[i].address+'</a></p>'
             +'<p>URL：<a href="'+data[i].store_url+'"target="_blank">'+data[i].store_url+'</a></p>'
             +data[i].store_name+'で<a href="https://www.google.co.jp/maps/search/'+data[i].store_name+'"target="_blank">'+'Google Map'+'</a>検索</br>'
-            +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Googl'+'</a>検索')      //店舗HP
-            .openPopup();
+            +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Google'+'</a>検索');  
+            }
+            searchLayer.addLayer(marker)
+            
+
             }
           }
         }
       }
+      
       /* $.getJSON(contextPath + "/marker_colorTest2_test?",null,function(data,textStatus,jqXHR){
         let latitude = data.latitude;
         alert(latitude)
       }) */
-
-      
     </script>
   </body>
 </html> 
