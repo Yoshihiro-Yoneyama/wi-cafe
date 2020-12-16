@@ -124,11 +124,16 @@ L.control.mousePosition(options).addTo(map);
   });
   map.addControl(control);
   
+/*-------------------- ホーム画面の遷移 --------------------*/ 
   function button2_click(){
-    const form = document.getElementById('home');
-    const button1 = document.getElementById
     document.form1.submit();
   }
+  
+/*-------------------- ホーム画面の遷移 --------------------*/ 
+  function button2_click(){
+    document.form1.submit();
+  }
+  
 /*-------------------- 検索窓の作成 --------------------*/
 //① 検索用のレイヤーを作成
 var searchLayer = new L.LayerGroup();
