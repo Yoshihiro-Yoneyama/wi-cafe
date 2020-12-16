@@ -44,8 +44,8 @@ public class MapController {
     	
     	// location.setLatitude(35.7102);
     	// location.setLongitude(139.8132);
-//        String json = "{\"latitude\":35.7102,\"longitude\":139.8132}";
-    	//JSON変換用クラス
+		// String json = "{\"latitude\":35.7102,\"longitude\":139.8132}";
+    	// JSON変換用クラス
     	ObjectMapper mapper = new ObjectMapper();
     	
     	try {
@@ -77,6 +77,11 @@ public class MapController {
     @RequestMapping("marker_colorTest2")
 	public String markerDisp2() {
 		return "marker_colorTest2";
+	}
+
+	@RequestMapping("home")
+	public String homeDisp(){
+		return "home";
 	}
 
 /*------共通------*/
