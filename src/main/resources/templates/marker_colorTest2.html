@@ -38,8 +38,17 @@
 </head>
 <body>
 	<div id="mapid"></div>
+/*-------------------- ホーム画面の遷移(form1) --------------------*/
 	<form action="home" method="get" name="form1">
 		<input id="home" type="hidden" />
+	</form>
+/*-------------------- プライバシーポリシー画面の遷移(form2) --------------------*/
+	<form action="privacypolicy" method="get" name="form2">
+		<input id="privacypolicy" type="hidden" />
+	</form>
+/*-------------------- 運営者情報画面の遷移(form3) --------------------*/
+	<form action="person" method="get" name="form3">
+		<input id="person" type="hidden" />
 	</form>
 	<table>
 		<tr>
@@ -97,43 +106,40 @@ L.control.mousePosition(options).addTo(map);
 	var searchboxControl = createSearchboxControl();
 	var control = new searchboxControl({
 		//ヘッダー
-		sidebarTitleText : 'Header',
+		sidebarTitleText : 'Wi-cafe',
 		sidebarMenuItems : {
 			Items : [ {
-				type : "link",
-				name : "Link 1 (github.com)",
-				href : "http://github.com",
-        icon : "icon-local-carwash"
-			}, {
-				type : "link",
-				name : "Link 2 (google.com)",
-				href : "http://google.com",
-        icon : "icon-cloudy"
+				type : "button",
+				name : "運営者情報",
+				onclick : "button3_click()",
+        		icon : "icon-face"
 			}, {
 				type : "button",
-				name : "Button 1",
-				onclick : "alert('button 1 clicked !')",
+				name : "プライバシーポリシー",
+				onclick : "button2_click()",
+        		icon : "icon-face"
+			}, {
+				type : "button",
+				name : "ホーム",
+				onclick : "button1_click();",
 				icon : "icon-potrait"
-			}, {
-				type : "button",
-				name : "Button 2",
-				onclick : "button2_click();",
-				icon : "icon-local-dining"
 			}, ]
 		}
   });
   map.addControl(control);
   
 /*-------------------- ホーム画面の遷移 --------------------*/ 
-  function button2_click(){
+  function button1_click(){
     document.form1.submit();
   }
-  
-/*-------------------- ホーム画面の遷移 --------------------*/ 
+/*-------------------- プライバシーポリシー画面の遷移 --------------------*/ 
   function button2_click(){
-    document.form1.submit();
+    document.form2.submit();
   }
-  
+/*-------------------- 運営者情報画面の遷移 --------------------*/ 
+  function button3_click(){
+    document.form3.submit();
+  }
 /*-------------------- 検索窓の作成 --------------------*/
 //① 検索用のレイヤーを作成
 var searchLayer = new L.LayerGroup();

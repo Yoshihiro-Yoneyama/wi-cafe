@@ -83,6 +83,16 @@ public class MapController {
 	public String homeDisp(){
 		return "home";
 	}
+	
+	@RequestMapping("privacypolicy")
+	public String policyDisp(){
+		return "privacypolicy";
+	}
+
+	@RequestMapping("person")
+	public String personDisp(){
+		return "person";
+	}
 
 /*------共通------*/
 	private String encode(String data){

@@ -33,7 +33,7 @@
 	/* width: 2px; */
 	height: 20px;
 	border-bottom: 1px solid transparent;
-	padding: 18px 18px 18px;
+	padding: 18px 18px;
 	transition-property: background, box-shadow;
 	transition-duration: .3s
 }
@@ -56,7 +56,7 @@
 	display: block;
 	background-image: url(images/ic_dehaze_black_24dp_2x.png);
 	background-size: 100%;
-	background-position: 0 0;
+	background-position: 1 0;
 	height: 20px;
 	width: 20px;
 	opacity: .60
@@ -66,7 +66,7 @@
 .searchbox-menubutton {
 	display: block;
 	cursor: pointer;
-	padding: 10px
+	padding: 9px
 }
 
 /* #searchboxinput {
@@ -146,7 +146,7 @@ a, button, h1, h2, h3, h4, h5, h6, input, ol, p, textarea, th, ul {
 .panel-header-title {
 	display: table-cell;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	width: 95%;
 	line-height: 24px;
@@ -233,5 +233,10 @@ a, button, h1, h2, h3, h4, h5, h6, input, ol, p, textarea, th, ul {
 
 .icon-local-carwash {
 	background: url(images/ic_local_car_wash_black_24dp_2x.png);
+	background-size: 100%
+}
+
+.icon-face{
+	background: url(images/ic_face_black_18dp.png);
 	background-size: 100%
 }
