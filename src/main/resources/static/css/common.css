@@ -31,6 +31,8 @@ input[type=file] {
 footer {
   padding: 20px 0 60px;
   text-align: center;
+  font-family: OCRB;
+  font-size:12px;
 }
 footer a {
   display: inline-block;

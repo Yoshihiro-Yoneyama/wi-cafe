@@ -29,16 +29,16 @@ public class MapController {
 	/*@ResponseBody*/
 	@RequestMapping("")
 	public String mapDisp() {
-		return "homemap";
+		return "wi-cafe_map";
 	}
 		
 	/*User user = (User) jdbctemplate.queryForList("select latitude from map_marker");
 		return getJson(user);
     }*/
     @ResponseBody
-    @RequestMapping("/marker_colorTest2_test")
+    @RequestMapping("/setMarker")
     public String jsontest(){
-        List<Map<String,Object>> location = jdbctemplate.queryForList("select * from map_marker");
+        List<Map<String,Object>> location = jdbctemplate.queryForList("select * from map_marker where delete_flg not in (1)");
 
     	// Location location = new Location();
     	
@@ -74,9 +74,9 @@ public class MapController {
 		return "icon";
     }
     
-    @RequestMapping("marker_colorTest2")
+    @RequestMapping("wi-cafe_map")
 	public String markerDisp2() {
-		return "marker_colorTest2";
+		return "wi-cafe_map";
 	}
 
 	@RequestMapping("home")

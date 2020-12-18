@@ -25,7 +25,10 @@
 <script src="https://code.jquery.com/ui/1.8.24/jquery-ui.min.js"></script>
 <script src="js/leaflet.customsearchbox.min.js"></script>
 <link href="css/searchbox.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<link rel="stylesheet" type="text/css" href="/css/about.css">
 <!-- plugin -->
+
 <style type="text/css">
 <!--
 #mapid {
@@ -38,15 +41,15 @@
 </head>
 <body>
 	<div id="mapid"></div>
-/*-------------------- ホーム画面の遷移(form1) --------------------*/
+	<!-------------------- ホーム画面の遷移(form1) ------------------>
 	<form action="home" method="get" name="form1">
 		<input id="home" type="hidden" />
 	</form>
-/*-------------------- プライバシーポリシー画面の遷移(form2) --------------------*/
+	<!-------------------- プライバシーポリシー画面の遷移(form2) -------------------->
 	<form action="privacypolicy" method="get" name="form2">
 		<input id="privacypolicy" type="hidden" />
 	</form>
-/*-------------------- 運営者情報画面の遷移(form3) --------------------*/
+	<!-------------------- 運営者情報画面の遷移(form3) -------------------->
 	<form action="person" method="get" name="form3">
 		<input id="person" type="hidden" />
 	</form>
@@ -110,6 +113,11 @@ L.control.mousePosition(options).addTo(map);
 		sidebarMenuItems : {
 			Items : [ {
 				type : "button",
+				name : "Wi-cafeの使い方",
+				onclick : "button1_click();",
+				icon : "icon-potrait"
+			}, {
+				type : "button",
 				name : "運営者情報",
 				onclick : "button3_click()",
         		icon : "icon-face"
@@ -117,12 +125,7 @@ L.control.mousePosition(options).addTo(map);
 				type : "button",
 				name : "プライバシーポリシー",
 				onclick : "button2_click()",
-        		icon : "icon-face"
-			}, {
-				type : "button",
-				name : "ホーム",
-				onclick : "button1_click();",
-				icon : "icon-potrait"
+        		icon : "icon-file"
 			}, ]
 		}
   });
@@ -158,7 +161,7 @@ map.addControl( controlSearch );
 /*------------------- 非同期通信の設定 --------------------*/
       let xhr = new XMLHttpRequest();
       /* javaのコントローラーに非同期リクエスト送信 */
-      xhr.open("GET","/marker_colorTest2_test",true);
+      xhr.open("GET","/setMarker",true);
       xhr.send(null);
 
       /* xhr.responseType = 'json'; */
@@ -193,6 +196,8 @@ map.addControl( controlSearch );
             .bindPopup('<p>店名：'+data[i].store_name+'</p>'  
             +'<p>住所：<a href="https://www.google.co.jp/maps/search/'+data[i].address+'"target="_blank">'+data[i].address+'</a></p>'
             +'<p>URL：なし</p>'
+            +'<span>営業時間：'+data[i].business_hours+'</span>'
+            +'<span>定休日：'+data[i].regular_holiday+'</span><br/>'
             +data[i].store_name+'で<a href="https://www.google.co.jp/maps/search/'+data[i].store_name+'"target="_blank">'+'Google Map'+'</a>検索</br>'
             +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Google'+'</a>検索');
             }else{
@@ -201,12 +206,39 @@ map.addControl( controlSearch );
             .bindPopup('<p>店名：'+data[i].store_name+'</p>'  
             +'<p>住所：<a href="https://www.google.co.jp/maps/search/'+data[i].address+'"target="_blank">'+data[i].address+'</a></p>'
             +'<p>URL：<a href="'+data[i].store_url+'"target="_blank">'+data[i].store_url+'</a></p>'
+            +'<span>営業時間：'+data[i].business_hours+'</span><br/>'
+            +'<span>定休日：'+data[i].regular_holiday+'</span><br/><br/>'
             +data[i].store_name+'で<a href="https://www.google.co.jp/maps/search/'+data[i].store_name+'"target="_blank">'+'Google Map'+'</a>検索</br>'
             +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Google'+'</a>検索');  
             }
             searchLayer.addLayer(marker);
             
 
+            
+            /* -- Table: public.map_marker
+
+            -- DROP TABLE public.map_marker;
+
+            CREATE TABLE public.map_marker
+            (
+                store_id integer NOT NULL,
+                store_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+                address character varying(100) COLLATE pg_catalog."default",
+                store_url character varying(255) COLLATE pg_catalog."default",
+                longitude double precision NOT NULL,
+                latitude double precision NOT NULL,
+                report character varying(140) COLLATE pg_catalog."default",
+                report_flg character varying(1) COLLATE pg_catalog."default" NOT NULL,
+                business_hours character varying(255) COLLATE pg_catalog."default",
+                regular_holiday character varying(10) COLLATE pg_catalog."default",
+                delete_flg integer,
+                CONSTRAINT map_marker_pkey PRIMARY KEY (store_id)
+            )
+
+            TABLESPACE pg_default;
+
+            ALTER TABLE public.map_marker
+                OWNER to postgres; */
             }
           }
         }
