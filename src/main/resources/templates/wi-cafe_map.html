@@ -212,33 +212,7 @@ map.addControl( controlSearch );
             +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Google'+'</a>検索');  
             }
             searchLayer.addLayer(marker);
-            
-
-            
-            /* -- Table: public.map_marker
-
-            -- DROP TABLE public.map_marker;
-
-            CREATE TABLE public.map_marker
-            (
-                store_id integer NOT NULL,
-                store_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
-                address character varying(100) COLLATE pg_catalog."default",
-                store_url character varying(255) COLLATE pg_catalog."default",
-                longitude double precision NOT NULL,
-                latitude double precision NOT NULL,
-                report character varying(140) COLLATE pg_catalog."default",
-                report_flg character varying(1) COLLATE pg_catalog."default" NOT NULL,
-                business_hours character varying(255) COLLATE pg_catalog."default",
-                regular_holiday character varying(10) COLLATE pg_catalog."default",
-                delete_flg integer,
-                CONSTRAINT map_marker_pkey PRIMARY KEY (store_id)
-            )
-
-            TABLESPACE pg_default;
-
-            ALTER TABLE public.map_marker
-                OWNER to postgres; */
+     
             }
           }
         }
