@@ -33,9 +33,9 @@ ul, ol {
 
 p {margin-top: 8px;}
 
-
+/* ホームボタン */
 .goHome {
-  position: absolute;
+  position: fixed;
   display: block;
   top: 20px; right: 20px;
   width: 30px;
@@ -48,7 +48,7 @@ p {margin-top: 8px;}
   cursor: pointer;
 }
 .goHome:hover {
-	position: absolute;
+	position: fixed;
 	top: 20px; right: 20px;
 	 display: block;
 	 background: #fff url(images/ic_map_18dp.png) center;

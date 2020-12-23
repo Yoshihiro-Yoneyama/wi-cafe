@@ -32,7 +32,7 @@
 <style type="text/css">
 <!--
 #mapid {
-	height: 500px;
+	height: 100vh;
 	width: 100%;
 	margin: 0 0 0 auto;
 }
@@ -75,7 +75,7 @@
 			</form>
 		</tr>
 		<tr>
-			<form action="marker_colorTest2">
+			<form action="wi-cafe_map">
 				<input type="submit" value="JSONtest" />
 			</form>
 		</tr>
@@ -110,8 +110,11 @@ L.control.mousePosition(options).addTo(map);
 	var control = new searchboxControl({
 		//ヘッダー
 		sidebarTitleText : 'Wi-cafe',
-		sidebarMenuItems : {
+		sidebarMenuItems :{
 			Items : [ {
+				type : "name",
+				name : "Wi-cafeの使い方"
+			}, {
 				type : "button",
 				name : "Wi-cafeの使い方",
 				onclick : "button1_click();",
@@ -158,7 +161,7 @@ var controlSearch = new L.Control.Search({
 　　});
 map.addControl( controlSearch ); 
 
-/*------------------- 非同期通信の設定 --------------------*/
+/*------------------- 非同期通信の設定(マーカーと店情報の表示) --------------------*/
       let xhr = new XMLHttpRequest();
       /* javaのコントローラーに非同期リクエスト送信 */
       xhr.open("GET","/setMarker",true);
@@ -210,7 +213,8 @@ map.addControl( controlSearch );
             +'<span>定休日：'+data[i].regular_holiday+'</span><br/><br/>'
             +data[i].store_name+'で<a href="https://www.google.co.jp/maps/search/'+data[i].store_name+'"target="_blank">'+'Google Map'+'</a>検索</br>'
             +data[i].store_name+'で<a href="https://www.google.com/search?q='+data[i].store_name+'"target="_blank">'+'Google'+'</a>検索');  
-            }
+			}
+			//検索レイヤ―に店舗名を格納(後々検討要)
             searchLayer.addLayer(marker);
      
             }
