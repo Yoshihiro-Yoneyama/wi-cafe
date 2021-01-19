@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.wicafe.demo.controller;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
 
-import com.example.demo.entity.User;
-import com.example.demo.repository.MapRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wicafe.demo.entity.User;
+import com.wicafe.demo.repository.MapRepository;
 
 @Controller
 public class MapController {

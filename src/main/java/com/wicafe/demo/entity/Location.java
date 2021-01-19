@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.wicafe.demo.entity;
 
 public class Location {
 	private double latitude;
