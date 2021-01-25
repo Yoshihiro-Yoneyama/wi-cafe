@@ -11,6 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>wi_cafe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>wi_cafe</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -31,6 +32,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -74,10 +80,14 @@
 	</dependencies>
 
 	<build>
+	<finalName>wicafe</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+				<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

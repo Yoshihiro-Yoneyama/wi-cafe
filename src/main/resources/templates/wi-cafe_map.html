@@ -2,7 +2,8 @@
 <html>
 
 <head>
-	<title>Leaflet Plugin leaflet.sprite</title>
+	<title>wi-fiが使えるカフェ検索 | wi-cafe</title>
+	<meta name=”description” content=”wi-fiが利用できるカフェを検索することができる地図アプリです。お仕事やちょっとした休憩等に使えるカフェの検索にご利用ください。”>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
@@ -25,8 +26,14 @@
 	<script src="https://code.jquery.com/ui/1.8.24/jquery-ui.min.js"></script>
 	<script src="js/leaflet.customsearchbox.min.js"></script>
 	<link href="css/searchbox.min.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="/css/common.css">
-	<link rel="stylesheet" type="text/css" href="/css/about.css">
+	<!-- その他デザイン -->
+			<!--  <link href="/css/common.css" rel="stylesheet"/>にしていたら
+			(hrefの部分で"/"を入力していたら)本番環境でエラー出るため注意 -->
+	<link href="css/common.css" rel="stylesheet"/>
+	<link href="css/about.css" rel="stylesheet" />
+	<!-- <link  type="text/css" href="css/common.css" rel="stylesheet"/>
+	<link type="text/css" href="css/about.css" rel="stylesheet" /> -->
+
 	<!-- plugin -->
 
 	<style type="text/css">
@@ -54,7 +61,8 @@
 	<form action="person" method="get" name="form3">
 		<input id="person" type="hidden" />
 	</form>
-	<table>
+<!-- Leaflet機能テスト用遷移ページ -->
+<!-- 	<table>
 		<tr>
 			<form action="marker_colorTest">
 				<input type="submit" value="マーカー色" />
@@ -85,7 +93,9 @@
 				<input type="submit" value="" />
 			</form>
 		</tr>
-	</table>
+	</table> -->
+	
+<!------------------ ここからマップの設定(Javascript) ------------------->
 	<script>
 
 		// Mapの基本設定
@@ -166,7 +176,9 @@
 		/*------------------- 非同期通信の設定(マーカーと店情報の表示) --------------------*/
 		let xhr = new XMLHttpRequest();
 		/* javaのコントローラーに非同期リクエスト送信 */
-		xhr.open("GET", "/setMarker", true);
+/* xhr.open("GET", "/setMarker", true);にしていたら
+ * (パスの部分で"/"を入力していたら)本番環境でエラー出るため注意 */
+		xhr.open("GET", "setMarker", true);
 		xhr.send(null);
 
 		/* xhr.responseType = 'json'; */

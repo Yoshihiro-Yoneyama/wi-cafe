@@ -58,37 +58,44 @@ public class MapController {
         
     }
 
-	
-	@RequestMapping("leafmap")
+/*********テスト用ページ***************/
+	/*マップ表示のみ
+	 * 
+	 * @RequestMapping("leafmap")
 	public String leafmapDisp() {
 		return "leafmap";
 	}
 	
+	/*マーカー色変更
 	@RequestMapping("marker_colorTest")
 	public String markerDisp() {
 		return "marker_colorTest";
 	}
 	
+	/*アイコン変更
 	@RequestMapping("icon")
 	public String iconDisp() {
 		return "icon";
-    }
+	}*/
     
     @RequestMapping("wi-cafe_map")
 	public String markerDisp2() {
 		return "wi-cafe_map";
 	}
 
+	/*ハンバーガーメニューホーム画面*/
 	@RequestMapping("home")
 	public String homeDisp(){
 		return "home";
 	}
 	
+	/*ハンバーガーメニュープライバシーポリシー*/
 	@RequestMapping("privacypolicy")
 	public String policyDisp(){
 		return "privacypolicy";
 	}
 
+	/*ハンバーガーメニュー自己紹介*/
 	@RequestMapping("person")
 	public String personDisp(){
 		return "person";
